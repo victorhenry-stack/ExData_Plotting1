@@ -12,9 +12,9 @@ png("plot2.png", width=480, height=480)
 
 # 4. CREATE THE PLOT
 # type="l" tells R to draw a LINE instead of dots
-plot(subset_data$Global_active_power ~ subset_data$Datetime, 
-     type="l",
-     ylab="Global Active Power (kilowatts)", 
+plot(subset_data$Global_active_power ~ subset_data$Datetime,  #Plot power as a function of time
+     type="l", #use a line
+     ylab="Global Active Power (kilowatts)", #label y axis as Global Active Power (kilowatts)"
      xlab="")
 
 # 5. CLOSE DEVICE
