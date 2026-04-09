@@ -12,18 +12,18 @@
 #data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
 
 
-# 1. create a variable to read the data in a usable format.
+# 1. Lets create a variable to read the data in a usable format.
 data <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?")
 
 #ok, seems to be workable data now, lets filter the data to get only data for the period we need to analyse.
 
 
-# 2. Filter the data for the required period of time.
+# 2. Lets Filter the data for the required period of time.
 subset_data <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 
 #this was just a lot of trial and error, but its pretty straight forward once the data is organized.
 
 # 3. Create the PNG
-png("plot1.png", width=480, height=480)
-hist(subset_data$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
-dev.off()
+png("plot1.png", width=480, height=480) #"print a PNG file named Plot1.png, with size 480 x 480 (Square).
+hist(subset_data$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)") #creates a histogram, get the column "Global_active_power" from subset_data "Which I defined earlier by filtering only the dates I need"
+dev.off() #saves the file and generates the picture
